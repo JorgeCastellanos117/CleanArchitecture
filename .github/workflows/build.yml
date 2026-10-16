@@ -24,8 +24,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          KEY=$(grep '^sonar.projectKey=' sonar.project.properties | cut -d= -f2 | tr -d '\r')
-          ORG=$(grep '^sonar.organization=' sonar.project.properties | cut -d= -f2 | tr -d '\r')
+          KEY=$(grep '^sonar.projectKey=' sonar-project.properties | cut -d= -f2 | tr -d '\r')
+          ORG=$(grep '^sonar.organization='sonar-project.properties | cut -d= -f2 | tr -d '\r')
           echo "Project key: $KEY"
           echo "Organization: $ORG"
           dotnet sonarscanner begin /k:"$KEY" /o:"$ORG" /d:sonar.token="$SONAR_TOKEN" /d:sonar.host.url="https://sonarcloud.io"
