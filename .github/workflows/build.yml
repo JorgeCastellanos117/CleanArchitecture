@@ -27,4 +27,4 @@ jobs:
         run: |
           dotnet sonarscanner begin /k:"sonar.projectKey" /o:"sonar.organization" /d:sonar.token="$SONAR_TOKEN" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
-          dotnet sonarscanner end /d:sonar.token="$SONAR_TOKEN"
+          dotnet sonarscanner end /d:sonar.token="$SONAR_TOKEN" 
